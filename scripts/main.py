@@ -913,6 +913,14 @@ def process_account(idx: int, email: str, password: str, tg_token: str, tg_chat:
                               f"❌ 登录失败\n账号: {mask_email(email)}\n\nWispbyte Auto Restart")
                 return
 
+            log("✅ 本次自动登录完成")
+            screenshot = take_screenshot(sb, idx, "login-ok")
+            send_tg_photo(
+                tg_token, tg_chat, screenshot,
+                "✅ Wispbyte 自动登录成功"
+            )
+            return
+            
             servers = get_servers(sb)
             if not servers:
                 screenshot = take_screenshot(sb, idx, "no-server")
