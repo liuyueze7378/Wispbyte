@@ -1,4 +1,4 @@
-name: Wispbyte 自动重启
+name: Wispbyte 自动登录
 
 on:
   schedule:
